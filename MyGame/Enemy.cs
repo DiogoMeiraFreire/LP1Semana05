@@ -67,5 +67,48 @@ namespace MyGame
                     health = 0;
             }
         }
+
+        public void PickupPowerUp(PowerUp powerUp, float value)
+        {
+            if(value > 100)
+            {
+                value = 100; 
+            }
+
+
+            switch(powerUp)
+            {
+                case PowerUp.Health:
+                {
+                    if(health + value > 100f)
+                    {
+                        health = 100f; 
+
+                    }
+                    else
+                    {   
+                        health += value; 
+                    }
+
+                    break; 
+                }
+
+                case PowerUp.Shield:
+                {
+                    if(shield + value > 100f)
+                    {
+                        shield = 100f; 
+
+                    }
+                    else
+                    {
+                        shield += value; 
+                    }
+
+                    break;
+                }
+            }
+        }
+
     }
 }
