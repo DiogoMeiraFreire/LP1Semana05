@@ -4,9 +4,26 @@ namespace RanDice
 {
     class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+
+            int n = int.Parse(args[0]);
+
+            int s = int.Parse(args[1]);
+
+            Random random = new Random(s);
+
+            int diceResult = 0; 
+
+            for(int i = 0; i < n; i++)
+            {
+                int randomNumber = random.Next(1, 7);
+
+                diceResult += randomNumber;
+
+                randomNumber = 0;  
+            }
+            Console.WriteLine(diceResult); 
         }
     }
 }
