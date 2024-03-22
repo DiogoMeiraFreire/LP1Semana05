@@ -7,6 +7,8 @@ namespace MyGame
         private string name;
         private float health;
         private float shield;
+        private static int powerUpsColl;
+
 
         public Enemy(string name)
         {
@@ -108,7 +110,12 @@ namespace MyGame
                     break;
                 }
             }
+            powerUpsColl++;
         }
-
+        
+        public static int GetPowerUpsCollected()
+        {
+            return powerUpsColl; 
+        }
     }
 }
